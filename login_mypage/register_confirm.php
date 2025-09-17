@@ -17,7 +17,7 @@ move_uploaded_file($temp_pic_name, $path_filename);
         <div class="login"><a href="login.php">ログイン</a></div>
     </header>
     <div class="main">
-        <form action="register_complete.php" method="post">
+        <form action="register_insert.php" method="post">
             <h2>会員登録 確認</h2>
             <p>こちらの内容で登録してもよろしいでしょうか？</p>
             <div class="form_contents">
@@ -27,13 +27,16 @@ move_uploaded_file($temp_pic_name, $path_filename);
                 <div class="picture">プロフィール画像: <img src="<?php echo htmlspecialchars($path_filename, ENT_QUOTES, 'UTF-8'); ?>" alt="プロフィール画像" /></div>
                 <div class="comments">コメント: <?php echo nl2br(htmlspecialchars($_POST['comments'], ENT_QUOTES, 'UTF-8')); ?></div>
             </div>
+            <input type="hidden" name="name" value="<?php echo htmlspecialchars($_POST['name'], ENT_QUOTES, 'UTF-8'); ?>" />
+            <input type="hidden" name="mail" value="<?php echo htmlspecialchars($_POST['mail'], ENT_QUOTES, 'UTF-8'); ?>" />
+            <input type="hidden" name="password" value="<?php echo htmlspecialchars($_POST['password'], ENT_QUOTES, 'UTF-8'); ?>" />
+            <input type="hidden" name="path_filename" value="<?php echo htmlspecialchars($path_filename, ENT_QUOTES, 'UTF-8'); ?>" />
+            <input type="hidden" name="comments" value="<?php echo htmlspecialchars($_POST['comments'], ENT_QUOTES, 'UTF-8'); ?>" />
             <div class="toroku">
                 <input type="submit" value="登録" class="submit_button" />
             </div>
         </form>
     </div>
-    <footer>
-        <p>&copy; 2023 MyPage</p>
-    </footer>
+    <footer>© 2018 InterNous.inc. All rights reserved</footer>
 </body>
 </html>
