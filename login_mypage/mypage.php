@@ -12,8 +12,13 @@ try {
     $stmt = $pdo->prepare('SELECT * FROM login_mypage WHERE id = ?');
     $stmt->execute([$_SESSION['user_id']]);
     $user = $stmt->fetch(PDO::FETCH_ASSOC);
+    $pdo = null; // DB切断
     if (!$user) {
-        throw new Exception('ユーザー情報が取得できませんでした');
+        // セッション情報が不正ならログイン画面へ
+        session_unset();
+        session_destroy();
+        header('Location: login.php');
+        exit;
     }
 } catch (Exception $e) {
     exit('エラー: ' . htmlspecialchars($e->getMessage()));
@@ -33,7 +38,7 @@ try {
         <div class="log_out"><a href="log_out.php">ログアウト</a></div>
     </header>
     <div class="main">
-        <form>
+        <form action="mypage_hensyu.php" method="get">
             <div class="form_contents">
                 <h2>会員情報</h2>
                 <p>こんにちは！<?= htmlspecialchars($user['name']) ?> さん</p>
@@ -47,9 +52,8 @@ try {
                         <div>ハッシュされたパスワード：<br><?= htmlspecialchars($user['password']) ?></div>
                     </div>
                 </div>
-                <hr style="margin:18px 0;">
                 <div class="comments"><?= nl2br(htmlspecialchars($user['comments'])) ?></div>
-                <div action="mypage_hensyu.php" method="get" class="hensyu_button">
+                <div class="hensyu_button">
                     <button type="submit" class="submit_button" size="35">編集する</button>
                 </div>
             </div>

@@ -105,6 +105,8 @@ footer {
   line-height: 40px;
   font-size: 13px;
   border-top: lightgray solid 2px;
+  position: fixed;
+  bottom: 0;
 }
 
 p {

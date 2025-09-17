@@ -56,6 +56,7 @@ label {
 
 .comments {
   margin-bottom: 18px;
+  border-top: solid 1px #31a263;
   text-align: left;
 }
 
@@ -90,6 +91,8 @@ footer {
   line-height: 40px;
   font-size: 13px;
   border-top: lightgray solid 2px;
+  position: fixed;
+  bottom: 0;
 }
 
 .profile_image {

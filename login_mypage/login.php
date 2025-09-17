@@ -73,7 +73,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <body>
     <header>
         <img src="4eachblog_logo.jpg">
-        <div class="login"><a href="login.php">ログイン</a></div>
+        <div class="login"><a href="register.php">新規登録</a></div>
     </header>
 
     <main>
