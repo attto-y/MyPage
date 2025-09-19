@@ -8,7 +8,7 @@ define('DB_PASS', '');
 define('REMEMBER_COOKIE_NAME', 'remember_me');
 define('REMEMBER_COOKIE_EXPIRE', 60 * 60 * 24 * 30); // 30日
 define('REMEMBER_COOKIE_PATH', '/');
-define('REMEMBER_COOKIE_SECURE', false); // HTTPS運用時は true に
+define('REMEMBER_COOKIE_SECURE', false); 
 define('REMEMBER_COOKIE_SAMESITE', 'Lax');
 
 function get_pdo(): PDO {

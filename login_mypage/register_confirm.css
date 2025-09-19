@@ -31,7 +31,7 @@ header img {
 form {
   margin: 0 auto;
   border: lightgray solid 2px;
-  width: 600px;
+  max-width: 600px;
   background-color: white;
   border-radius: 10px;
   margin-top: 40px;
@@ -40,7 +40,7 @@ form {
 }
 
 .form_contents {
-  margin: 30px 25px 25px 30px;
+  padding-bottom: 30px;
 }
 
 h2 {

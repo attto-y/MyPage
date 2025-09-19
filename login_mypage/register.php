@@ -49,7 +49,7 @@
 
 				<div class="comments">
 					<label>コメント</label><br>
-					<textarea name="comments" rows="5" cols="45"></textarea>
+					<textarea name="comments" rows="5" cols="40"></textarea>
 				</div>
 
 				<div class="toroku">
